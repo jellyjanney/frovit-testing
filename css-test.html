@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="UTF-8">
+                <meta>
+                <title>CSS Test</title>
+                <style>
+                        body {
+                                font: 400 16px/1.6 Arial, Helvetica, sans-serif;
+                                display: block;
+                                box-sizing: content-box;
+                                padding: 0;
+                                margin: 0;
+                        }
+
+                        h1,
+                        h2,
+                        h3,
+                        h4,
+                        h5,
+                        h6 {
+                                margin: 0;
+                                font-weight: 400;
+                        }
+
+                        .container {
+                                max-width: 100%;
+                                margin: 0 auto;
+                                padding: 16px 4pc;
+                                justify-content: center;
+                        }
+
+                        .card-container {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 4px;
+                                justify-content: flex-start;
+                        }
+
+                        .card {
+                                display: inline-block;
+                                overflow: hidden;
+                                max-width: 100%;
+                                width: auto;
+                                height: auto;
+                                margin-left: 0;
+                                margin-right: 0;
+                        }
+
+                        .card a {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                        }
+
+                        .card img {
+                                display: block;
+                                width: auto;
+                                height: 150px;
+                        }
+
+                        .container-head {
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 10px;
+                        }
+
+                        .text-primary {
+                                color: blue;
+                        }
+
+                </style>
+        </head>
+
+        <body>
+                <div class="container">
+                        <div class="container-head">
+                                <h3>Everyone's Photo</h3>
+                                <span class="text-primary">View all <span id="item">0</span></span>
+                        </div>
+
+                        <div class="card-container" id="cardContainer"></div>
+                </div>
+
+
+                <script>
+                        function fetchDataFromApi() {
+                                return fetch('https://picsum.photos/v2/list').then(response => {
+                                        if (!response.ok) {
+                                                throw new Error('Network response was not ok');
+                                        }
+                                        return response.json();
+                                });
+                        }
+
+
+                        function displayDataAsCards(data) {
+                                const cardContainer = document.getElementById('cardContainer');
+
+                                data.forEach(item => {
+                                        const card = document.createElement('div');
+                                        if (item.id >= 10) {
+                                                card.id = "IMG_0" + item.id;
+                                        } else {
+                                                card.id = "IMG_00" + item.id;
+                                        }
+                                        card.classList.add('card');
+
+                                        const imgLink = document.createElement('a');
+                                        imgLink.target = "_blank";
+                                        imgLink.href = item.url;
+
+                                        const imgItem = document.createElement('img');
+                                        imgItem.alt = item.author;
+                                        imgItem.src = item.download_url;
+
+                                        card.appendChild(imgLink);
+                                        imgLink.appendChild(imgItem);
+
+                                        cardContainer.appendChild(card);
+
+                                        document.getElementById("item").innerText = data.length;
+                                });
+                        }
+
+                        fetchDataFromApi()
+                                .then(apiData => {
+                                        displayDataAsCards(apiData);
+                                })
+                                .catch(error => {
+                                        console.error('เกิดข้อผิดพลาดในการดึงข้อมูลจาก API:', error);
+                                });
+                </script>
+        </body>
+
+</html>

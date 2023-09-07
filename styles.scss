@@ -1,0 +1,438 @@
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap';
+
+$color_1: #46529D;
+$color_2: #2EBAEE;
+$color_3: #707FDD;
+$gray: #F7F7F7;
+$dots_1: #3DC7D2;
+$dots_2: #23CF5F;
+$dots_3: #F3814A;
+$black: #000000;
+$white: #ffffff;
+
+$f_roboto: 'Roboto', sans-serif;
+$f_lato: 'Lato', sans-serif;
+
+
+* {
+        box-sizing: border-box;
+}
+
+body {
+        background: radial-gradient(91.13% 78.04% at 30.03% 0%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(237deg, #BCBFC8 10.31%, #91A2C6 90.59%), #B9BDC8 no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        font: 16px/1.6 $f_roboto;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        font-family: $f_lato;
+        font-weight: 500;
+}
+
+p,
+label,
+strong {
+        font-family: $f_roboto;
+        font-weight: 700;
+}
+
+.container {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 100%;
+        overflow: hidden;
+        padding: 0 16px;
+        margin: 0 auto;
+
+        @media only screen and (min-width: 1480px) {
+                width: 1479px;
+        }
+
+        @media only screen and (max-width: 1479.99px) {
+                width: 100%;
+        }
+}
+
+.row {
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 100%;
+
+        margin: {
+                left: -16px;
+                right: -16px;
+        }
+
+        ;
+}
+
+.form-group {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid $gray;
+        background-color: $gray;
+        gap: 8px;
+        padding: 0.25rem 1rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        input,
+        select {
+                padding: 0.25rem 2rem;
+                border: 1px solid $color_3;
+                border-radius: 0;
+                cursor: pointer;
+        }
+
+        button {
+                padding: 0.25rem 2rem;
+                background: linear-gradient(45deg, ($color_1 0%, $color_2 100%));
+                border: none;
+                font-family: $f_lato;
+                font-size: 1rem;
+                font-weight: 500;
+                color: $white;
+                cursor: pointer;
+        }
+}
+
+.card-container {
+        background-color: $gray;
+        display: flex;
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+        margin: 120px auto;
+
+        .col {
+                display: inline-flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+
+                &-3 {
+                        @extend .col;
+                        width: 33.3333%;
+
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        background-color: $color_1;
+
+                        h2 {
+                                display: inline-block;
+                                width: 100%;
+                                max-width: calc(100% - 90px);
+
+                                margin: {
+                                        top: 0;
+                                        left: auto;
+                                        right: 0;
+                                        bottom: 35px;
+                                }
+
+                                ;
+                                padding: 56px 48px 25px;
+                                background-color: $color_2;
+                                color: $white;
+                                font-family: $f_roboto;
+                                font-size: 54px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 100%;
+                        }
+
+                        .meta-wrap {
+                                padding: 90px;
+                                color: $white;
+
+                                .meta-label {
+                                        font-family: $f_lato;
+                                        font-size: 18px;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        line-height: 100%;
+                                        /* 18px */
+                                }
+
+                                .meta-date {
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 100%;
+
+                                        margin: {
+                                                top: 58px;
+                                        }
+
+                                        ;
+
+                                        .h1-day {
+                                                color: #FFF;
+                                                font-family: $f_lato;
+                                                font-size: 64px;
+                                                font-style: normal;
+                                                font-weight: 300;
+                                                line-height: 100%;
+                                                opacity: 0.5;
+                                        }
+
+                                        .h1-date {
+                                                color: #FFF;
+                                                font-family: $f_lato;
+                                                font-size: 64px;
+                                                font-style: normal;
+                                                font-weight: 300;
+                                                line-height: 100%;
+                                                opacity: 1;
+                                        }
+                                }
+
+                                .meta-schedule {
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 100%;
+                                        gap: 19px;
+                                        list-style: none;
+                                        padding: 0;
+
+                                        margin: {
+                                                top: 90px;
+                                        }
+
+                                        ;
+
+                                        &__list {
+                                                gap: 8px;
+                                                padding: 0;
+
+                                                span {
+                                                        color: #FFF;
+                                                        font-family: $f_roboto;
+                                                        font-size: 16px;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: 100%;
+                                                        opacity: 0.5;
+                                                        margin: 0;
+                                                }
+
+                                                p {
+                                                        color: #FFF;
+                                                        font-family: $f_roboto;
+                                                        font-size: 20px;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: 100%;
+                                                        opacity: 1;
+                                                        margin: 0;
+                                                }
+                                        }
+                                }
+                        }
+                }
+
+                &-9 {
+                        @extend .col;
+                        width: 66.6667%;
+                }
+        }
+}
+
+.nav-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background: #EFEEEC;
+        padding: 83px 64px 0;
+        margin: 0;
+        list-style: none;
+
+        .nav-link {
+                width: 100%;
+                color: #000;
+                font-family: Roboto;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                font-variant: all-small-caps;
+                text-transform: uppercase;
+                opacity: 0.5;
+                border: none;
+                cursor: pointer;
+
+                &::after {
+                        content: "";
+                        display: block;
+                        width: 51px;
+                        height: 4px;
+                        flex-shrink: 0;
+                        margin: 24px auto 0;
+                        background: $color_3;
+                        box-shadow: 0px -1px 16px 0px rgba(112, 127, 221, 0.75);
+                        opacity: 0;
+                        transition: all 0.3ms ease;
+                }
+
+                &.active {
+                        opacity: 1;
+
+                        &::after {
+                                display: block;
+                                opacity: 1;
+                        }
+                }
+        }
+
+        .nav-item {
+                display: inline-flex;
+                width: 33%;
+                padding: 0;
+                margin: 0;
+        }
+}
+
+.tab-content {
+        width: 100%;
+
+        .tab-pane {
+                width: 100%;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                background: #FFF;
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.14);
+        }
+}
+
+.content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        padding: 78px 0;
+
+        &:first-child {
+                padding-top: 78px;
+        }
+
+        &:last-child {
+                padding-top: 0;
+                padding-bottom: 78px;
+        }
+
+        h5 {
+                display: block;
+                border: 1px solid #ECECEC;
+                background: #EFEEEC;
+                color: #787878;
+                font-family: $f_roboto;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%;
+                width: 100%;
+                padding: 15px 70px;
+                margin: 0;
+        }
+
+        &::before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 100%;
+                background: #EFEEEC;
+                left: 59px;
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                z-index: 1;
+        }
+
+        .schedule-date {
+                display: block;
+                z-index: 2;
+                padding-left: 73px;
+                gap: 16px;
+                width: 100%;
+                margin-top: 35px;
+
+                &__list {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        margin: 8px 0 16px;
+                        row-gap: 8px;
+                        position: relative;
+
+                        h6,
+                        p {
+                                color: #000;
+                                font-family: $f_roboto;
+                                font-size: 20px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 100%;
+                                opacity: 1;
+                                margin: 0;
+                                padding: 0;
+                                width: 100%;
+                        }
+
+                        span {
+                                color: #000;
+                                font-family: $f_roboto;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 100%;
+                                opacity: 0.5;
+                                margin: 0;
+                                padding: 0;
+                                width: 100%;
+                        }
+
+                        &::before {
+                                content: "";
+                                display: inline-block;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 100%;
+                                background-color: $black;
+                                position: absolute;
+                                left: -17px;
+                                top: 4px;
+                        }
+
+
+                        &:nth-child(1) {
+                                &::before {
+                                        background-color: $dots_1;
+                                }
+                        }
+
+                        &:nth-child(2) {
+                                &::before {
+                                        background-color: $dots_2;
+                                }
+                        }
+
+                        &:nth-child(3) {
+                                &::before {
+                                        background-color: $dots_3;
+                                }
+                        }
+
+
+                }
+        }
+}

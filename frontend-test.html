@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Venue Booking System | Frontend test</title>
+                <link rel="stylesheet" href="styles.css">
+        </head>
+
+        <body>
+                <div class="container">
+                        <div class="row">
+                                <div class="card-container" id="currentBookingsContainer">
+                                        <div class="col-3">
+                                                <h2 id="roomId">A101</h2>
+
+                                                <div class="meta-wrap">
+                                                        <label id="meta-label" class="meta-label">Upcoming</label>
+
+                                                        <div class="meta-date">
+                                                                <span class="h1-day">Monday</span>
+                                                                <span class="h1-date">28 Sep</span>
+                                                        </div>
+
+                                                        <ul class="meta-schedule">
+                                                                <li class="meta-schedule__list">
+                                                                        <span>13:00 - 14:00</span>
+                                                                        <p>Lunch with Petr</p>
+                                                                </li>
+                                                                <li class="meta-schedule__list">
+                                                                        <span>15:00 - 16:00</span>
+                                                                        <p>Sales Weekly Meeting</p>
+                                                                </li>
+                                                                <li class="meta-schedule__list">
+                                                                        <span>16:00 - 18:00</span>
+                                                                        <p>Anastasia Website Warroom</p>
+                                                                </li>
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                        <div class="col-9">
+                                                <ul class="nav nav-tabs" id="tabDetail" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                                <button class="nav-link active" id="this-week-tab"
+                                                                        type="button" data-toggle="tab"
+                                                                        data-target="#this-week">This week</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                                <button class="nav-link" id="next-week-tab"
+                                                                        type="button" data-toggle="tab"
+                                                                        data-target="#next-week">NEXT WEEK</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                                <button class="nav-link" id="month-tab" type="button"
+                                                                        data-toggle="tab" data-target="#month">WHOLE
+                                                                        MONTH</button>
+                                                        </li>
+                                                </ul>
+                                                <div class="tab-content" id="myTabContent">
+                                                        <div class="tab-pane fade show active" id="this-week"
+                                                                role="tabpanel" aria-labelledby="this-week-tab">
+                                                                <div class="content-wrapper">
+                                                                        <h5>Today (Mon, 28 Sep)</h5>
+                                                                        <ul class="schedule-date">
+                                                                                <li class="schedule-date__list">
+                                                                                        <span>13:00 - 14:00</span>
+                                                                                        <h6>Lunch with Petr</h6>
+                                                                                </li>
+                                                                                <li class="schedule-date__list">
+                                                                                        <span>14:00 - 15:00</span>
+                                                                                        <h6>Sales Weekly Meeting</h6>
+                                                                                </li>
+                                                                                <li class="schedule-date__list">
+                                                                                        <span>16:00 - 18:00</span>
+                                                                                        <h6>Anastasia Website Warroom
+                                                                                        </h6>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                                <div class="content-wrapper">
+                                                                        <h5>Tomorrow (Tue, 29 Sep)</h5>
+                                                                        <ul class="schedule-date">
+                                                                                <li class="schedule-date__list">
+                                                                                        <span>13:00 - 14:00</span>
+                                                                                        <h6>One-on-one Session</h6>
+                                                                                </li>
+                                                                                <li class="schedule-date__list">
+                                                                                        <span>16:00 - 18:00</span>
+                                                                                        <h6>UGC Sprint Planning</h6>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+
+                <script src="javascript-test.js"></script>
+        </body>
+
+</html>
